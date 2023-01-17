@@ -6,6 +6,10 @@ body {
   margin: 5px;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 h2 {
   padding: 0 0 0 10px;
   border-left: solid 7px #FFC000;
@@ -33,7 +37,6 @@ h5 {
 
 .explanation {
   font-size: 10px;
-  margin-bottom: 0;
 }
 
 footer {
