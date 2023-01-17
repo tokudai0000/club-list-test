@@ -7,29 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- 本番時 -->
-    <link rel="stylesheet" type="text/css" href="https://tokudai0000.github.io/club-list-test/stylesheets/index.css">
-
-    <!-- テスト時 -->
-    <!-- <link rel="stylesheet" type="text/css" href="../club-list/stylesheets/index.css"> -->
   </head>
-
-  <script>
-
-    function PostMessage(url) {
-
-      if ( navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0) {
-        // iOS用
-        window.webkit.messageHandlers.tokumemoPlus.postMessage(url)
-
-      } else {
-        // Android用
-        document.location.href = url;
-        // document.getElementById("test").innerHTML = url
-      }
-    }
-
-  </script>
 
   <body>
 
@@ -82,9 +60,9 @@
 
         <h5>サークル・同好会・団体</h5>
 
-        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList"> KingStorks(キングストークス) <p class="explanation"> [草野球サークル]サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
+        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList" id="soto"> KingStorks(キングストークス) <p class="explanation"> [草野球サークル]サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
 
-        <li onclick="PostMessage('https://instagram.com/soccer_tokushima.uni?igshid=YmMyMTA2M2Y=')" class="list-group-item list-group-item-action tableList"> Assist <p class="explanation"> [徳大サッカーサークル]初心者経験者男女混ざって緩く楽しくサッカーしてます⚽️いつでも募集中です連絡お待ちしております！ </p> </li>
+        <li onclick="PostMessage('https://instagram.com/soccer_tokushima.uni')" class="list-group-item list-group-item-action tableList"> サッカーサークル Assist <p class="explanation"> 初心者経験者男女混ざって緩く楽しくサッカーしてます⚽️いつでも募集中です連絡お待ちしております！ </p> </li>
 
         <li onclick="PostMessage('https://mobile.twitter.com/watashihaotoko')" class="list-group-item list-group-item-action tableList"> ミステリーサークル同好会 </li>
 
@@ -104,3 +82,121 @@
   </footer>
 
 </html>
+
+
+
+<!-- GitHubのPagesを使う場合は単一ファイルにJavaScriptやCSSを記載した方がいい -->
+
+<script>
+
+  function PostMessage(url) {
+
+    if ( navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0) {
+      // iOS用
+      window.webkit.messageHandlers.tokumemoPlus.postMessage(url)
+
+    } else {
+      // Android用
+      document.location.href = url;
+      // document.getElementById("test").innerHTML = url
+    }
+  }
+
+  // const shortText = "お寿司食べたい🍣";
+  // const longText = "私が好きなお寿司のネタとして、サーモン、本マグロ、はまちが挙げられます。いずれにしても脂がのっていてとても気に入っています。そういえばお寿司屋さんといえば弊社から歩いても行けるところに、私がよく行くお店があるのですが、1000円以下から食べられる「回らないお寿司」でとてもおいしいです。私一人でも、同僚とのランチでも行きます。";
+  const textElem = document.getElementById("soto");
+
+
+  // function selectLong() {
+  //   textElem.innerText = longText;
+  //   resize();
+  // }
+
+  function resize() {
+    /* 文字数が少なくなったときのため、フォントサイズを戻せるようにします。
+    他にstyleの属性があればfont-sizeに関するところを除いてstyleに上書きしましょう。
+    今回はないのでstyle属性ごと削除します。*/
+    textElem.removeAttribute('style');
+    console.log(textElem.getBoundingClientRect().height , textElem.scrollHeight);
+    for (
+      let size = 30;
+      textElem.getBoundingClientRect().height　< textElem.scrollHeight && size > 10;
+      size -= 3
+      /* 文字がはみ出すサイズが存在していたので、1ずつ減らすのを3ずつ減らすという少し速いペースでフォントサイズを小さくしてみました。
+      こちらには正解不正解はなく、場合によって調整して遊んでみてください。*/
+    ) {
+      textElem.style.fontSize = size + "px";
+      // textElem.setAttribute("style", `font-size: ${size}px`); // こちらも可能
+    }
+  }
+
+  //ブラウザを開いたとき
+  resize();
+
+  //ウインドウサイズを変えたとき
+  window.addEventListener('resize', () => {
+    resize();
+  });
+
+</script>
+
+
+
+<style>
+  body {
+  background-color:rgb(255, 255, 255);
+}
+
+.contents {
+  margin: 5px;
+}
+
+/* p {
+  margin-bottom: 0;
+} */
+
+h2 {
+  padding: 0 0 0 10px;
+  border-left: solid 7px #FFC000;
+  font-size: 25px;
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+h5 {
+  padding: 0 0 4px 0; /* 下線部とフォントとの距離 */
+  font-size: 17px;
+  border-bottom: 4px solid #ffbf0081;
+}
+
+.table {
+  width: auto;
+  margin: 0 10px 0 0px;
+  margin-bottom: 2em;
+  font-family: 'Hiragino Maru Gothic Pro';
+}
+
+.tableList {
+  background-color: #ffbf0016;
+}
+
+.explanation {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 5px 5px;
+  position:absolute;
+  background-color: #0D3A97;
+}
+
+.footer-text {
+  font-size: 10px;
+  font-family: 'Hiragino Maru Gothic Pro';
+  color: #fff;
+}
+
+</style>
