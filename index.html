@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>徳島大学部活・サークル一覧</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- 本番時 -->
+    <link rel="stylesheet" type="text/css" href="https://tokudai0000.github.io/club-list-test/stylesheets/index.css">
+
+    <!-- テスト時 -->
+    <!-- <link rel="stylesheet" type="text/css" href="../club-list/stylesheets/index.css"> -->
+  </head>
+
+  <script>
+
+    function PostMessage(url) {
+
+      if ( navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0) {
+        // iOS用
+        window.webkit.messageHandlers.tokumemoPlus.postMessage(url)
+
+      } else {
+        // Android用
+        document.location.href = url;
+        // document.getElementById("test").innerHTML = url
+      }
+    }
+
+  </script>
+
+  <body>
+
+    <div class="contents">
+
+      <!-- 部活リストテンプレここから
+
+        ↓ PostMessage('リンク先URL')
+
+      ===通常===
+        <li onclick="PostMessage('https://www.instagram.com/tokushimaucc/')" class="list-group-item list-group-item-action tableList"> サイクリング部 </li>
+
+      ===リンクがまだの部活===
+        <li class="list-group-item tableList"  tabindex="-1" aria-disabled="true"> 〇〇サークル <dd> URL無し</dd> </li>
+
+      テンプレここまで -->
+
+      <h2>大学公認学生団体</h2>
+
+
+
+      <ui class="list-group list-group-flush table">
+
+        <h5>部活動・サークル</h5>
+
+        <li onclick="PostMessage('https://www.instagram.com/tokushimaucc/')" class="list-group-item list-group-item-action tableList"> サイクリング部 </li>
+
+        <li onclick="PostMessage('https://twitter.com/handmade_TU')" class="list-group-item list-group-item-action tableList"> ハンドメイド部 </li>
+
+        <li onclick="PostMessage('https://instagram.com/tokudai_karuta?igshid=YmMyMTA2M2Y=')" class="list-group-item list-group-item-action tableList"> 競技かるた部 </li>
+      </ui>
+
+
+
+      <ui class="list-group list-group-flush table">
+
+        <h5>学生団体</h5>
+
+        <a onclick="PostMessage('https://lit.link/developers')" class="list-group-item list-group-item-action tableList"> アプリ開発プロジェクト </a>
+
+        <a onclick="PostMessage('https://mobile.twitter.com/tokudai_toripro')" class="list-group-item list-group-item-action tableList"> 鳥人間プロジェクト </a>
+
+      </ui>
+
+
+
+      <h2>大学非公認学生団体</h2>
+
+      <ui class="list-group list-group-flush table">
+
+        <h5>サークル・同好会・団体</h5>
+
+        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList"> 草野球サークル KingStorks(キングストークス) <p class="explanation"> サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
+
+        <li onclick="PostMessage('https://instagram.com/soccer_tokushima.uni?igshid=YmMyMTA2M2Y=')" class="list-group-item list-group-item-action tableList"> Assistー徳大サッカーサークル <p class="explanation"> 初心者経験者男女混ざって緩く楽しくサッカーしてます⚽️いつでも募集中です連絡お待ちしております！ </p> </li>
+
+        <li onclick="PostMessage('https://mobile.twitter.com/watashihaotoko')" class="list-group-item list-group-item-action tableList"> ミステリーサークル同好会 </li>
+
+      </ui>
+
+    </div>
+
+  </body>
+
+
+  <footer>
+    <div class = "footer-text">
+
+      <p> 部活・サークル紹介一覧に記載を許していただける団体様がいらっしゃいましたら、お手数ですが、アプリ内の[Settings → ホームページ]から申請をお願いします。</p>
+
+    </div>
+  </footer>
+
+</html>
