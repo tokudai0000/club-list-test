@@ -18,7 +18,7 @@
         ↓ PostMessage('リンク先URL')
 
       ===通常===
-        <li onclick="PostMessage('https://www.instagram.com/tokushimaucc/')" class="list-group-item list-group-item-action tableList"> サイクリング部 </li>
+        <li onclick="PostMessage('URL')" class="list-group-item list-group-item-action tableList"> 団体名 <p class="explanation"> 説明文 </p> </li>
 
       ===リンクがまだの部活===
         <li class="list-group-item tableList"  tabindex="-1" aria-disabled="true"> 〇〇サークル <dd> URL無し</dd> </li>
@@ -38,6 +38,9 @@
         <li onclick="PostMessage('https://twitter.com/handmade_TU')" class="list-group-item list-group-item-action tableList"> ハンドメイド部 </li>
 
         <li onclick="PostMessage('https://instagram.com/tokudai_karuta')" class="list-group-item list-group-item-action tableList"> 競技かるた部 </li>
+
+        <li onclick="PostMessage('https://twitter.com/tokusoundcreate')" class="list-group-item list-group-item-action tableList"> 徳島大学作曲DTM研究部 <p class="explanation"> 作曲DTM研究部では、日々ボカロやEDM、ポップス、ロックなど様々な楽曲製作しています。 </p> </li>
+
       </ui>
 
 
@@ -46,9 +49,11 @@
 
         <h5>学生団体</h5>
 
-        <a onclick="PostMessage('https://lit.link/developers')" class="list-group-item list-group-item-action tableList"> アプリ開発プロジェクト </a>
+        <a onclick="PostMessage('https://lit.link/developers')" class="list-group-item list-group-item-action tableList"> アプリ開発プロジェクト <p class="explanation"> トクメモ＋を作ってます〜 </p>  </a>
 
         <a onclick="PostMessage('https://mobile.twitter.com/tokudai_toripro')" class="list-group-item list-group-item-action tableList"> 鳥人間プロジェクト </a>
+
+        <li onclick="PostMessage('https://twitter.com/tugameproject')" class="list-group-item list-group-item-action tableList"> ゲームクリエイトプロジェクト <p class="explanation"> イノベーションプラザで活動している、ゲームを制作する団体です！ </p> </li>
 
       </ui>
 
@@ -60,11 +65,9 @@
 
         <h5>サークル・同好会・団体</h5>
 
-        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList" id="soto">[草野球サークル] KingStorks(キングストークス) KingStorks(キングストークス) <p class="explanation"> [草野球サークル]サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
+        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList">草野球サークル KingStorks(キングストークス) <p class="explanation"> サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
 
-        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList" id="soto">[草野球サークル] KingStorks(キングストークス) <p class="explanation"> [草野球サークル]サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
-
-        <li onclick="PostMessage('https://instagram.com/soccer_tokushima.uni')" class="list-group-item list-group-item-action tableList"> サッカーサークル Assist <p class="explanation"> 初心者経験者男女混ざって緩く楽しくサッカーしてます⚽️いつでも募集中です連絡お待ちしております！ </p> </li>
+        <li onclick="PostMessage('https://instagram.com/soccer_tokushima.uni')" class="list-group-item list-group-item-action tableList"> Assistー徳大サッカーサークル <p class="explanation"> 初心者経験者男女混ざって緩く楽しくサッカーしてます⚽️いつでも募集中です連絡お待ちしております！ </p> </li>
 
         <li onclick="PostMessage('https://mobile.twitter.com/watashihaotoko')" class="list-group-item list-group-item-action tableList"> ミステリーサークル同好会 </li>
 
@@ -104,41 +107,6 @@
     }
   }
 
-  // const shortText = "お寿司食べたい🍣";
-  // const longText = "私が好きなお寿司のネタとして、サーモン、本マグロ、はまちが挙げられます。いずれにしても脂がのっていてとても気に入っています。そういえばお寿司屋さんといえば弊社から歩いても行けるところに、私がよく行くお店があるのですが、1000円以下から食べられる「回らないお寿司」でとてもおいしいです。私一人でも、同僚とのランチでも行きます。";
-  const textElem = document.getElementById("soto");
-
-
-  // function selectLong() {
-  //   textElem.innerText = longText;
-  //   resize();
-  // }
-
-  function resize() {
-    /* 文字数が少なくなったときのため、フォントサイズを戻せるようにします。
-    他にstyleの属性があればfont-sizeに関するところを除いてstyleに上書きしましょう。
-    今回はないのでstyle属性ごと削除します。*/
-    textElem.removeAttribute('style');
-    console.log(textElem.getBoundingClientRect().height , textElem.scrollHeight);
-    for (
-      let size = 30;
-      textElem.getBoundingClientRect().height　< textElem.scrollHeight && size > 10;
-      size -= 3
-      /* 文字がはみ出すサイズが存在していたので、1ずつ減らすのを3ずつ減らすという少し速いペースでフォントサイズを小さくしてみました。
-      こちらには正解不正解はなく、場合によって調整して遊んでみてください。*/
-    ) {
-      textElem.style.fontSize = size + "px";
-      // textElem.setAttribute("style", `font-size: ${size}px`); // こちらも可能
-    }
-  }
-
-  //ブラウザを開いたとき
-  resize();
-
-  //ウインドウサイズを変えたとき
-  window.addEventListener('resize', () => {
-    resize();
-  });
 
 </script>
 
@@ -152,10 +120,6 @@
 .contents {
   margin: 5px;
 }
-
-/* p {
-  margin-bottom: 0;
-} */
 
 h2 {
   padding: 0 0 0 10px;
@@ -199,6 +163,10 @@ footer {
   font-size: 10px;
   font-family: 'Hiragino Maru Gothic Pro';
   color: #fff;
+}
+
+.footer-text p {
+  margin-bottom: 0;
 }
 
 </style>
