@@ -25,6 +25,7 @@
 
       テンプレここまで -->
 
+      <h1>TEST用サイト</h1>
       <h2>大学公認学生団体</h2>
 
 
@@ -41,6 +42,19 @@
 
         <li onclick="PostMessage('https://twitter.com/tokusoundcreate')" class="list-group-item list-group-item-action tableList"> 徳島大学作曲DTM研究部 <p class="explanation"> 作曲DTM研究部では、日々ボカロやEDM、ポップス、ロックなど様々な楽曲製作しています。 </p> </li>
 
+        <li onclick="PostMessage('https://twitter.com/2012megapheps')" class="list-group-item list-group-item-action tableList"> 徳島大学放送研究会メガフェプス <p class="explanation"> メガフェプスはFM徳島にて毎週金曜大学生で行こう、毎週土曜フルーティーキッスを放送中! </p> </li>
+
+        <li onclick="PostMessage('https://www.instagram.com/tokudai_syodou')" class="list-group-item list-group-item-action tableList"> 書道部 <p class="explanation"> 放課後集まってのんびり好きな文字を書いています！経験者はもちろん、未経験者も大歓迎です！ </p> </li>
+
+        <li onclick="PostMessage('https://www.instagram.com/tokudai_kendo___josanjima/')" class="list-group-item list-group-item-action tableList"> 常三島剣道部 <p class="explanation"> 総勢24名で1.2年生が主体となって練習をしています。練習は火・木・土の週3回です。 </p> </li>
+
+        <li onclick="PostMessage('https://www.instagram.com/greens_tokushima/')" class="list-group-item list-group-item-action tableList"> 軽音サークルGreens <p class="explanation"> 初心者大歓迎！心優しい先輩と色んなバンドのコピーしたり自分達で曲を作って発信したりできます！ </p> </li>
+
+        <li onclick="PostMessage('https://twitter.com/manabukun_sss')" class="list-group-item list-group-item-action tableList"> 学びサポート企画部 </li>
+
+        <li onclick="PostMessage('https://instagram.com/tokushima.u__tf')" class="list-group-item list-group-item-action tableList"> 徳島大学陸上競技部 <p class="explanation"> 選手・マネージャー募集中！一緒に走りましょう！ </p> </li>
+
+        <li onclick="PostMessage('https://twitter.com/tokudai_nante')" class="list-group-item list-group-item-action tableList"> 医学部軟式テニス部 <p class="explanation"> 初心者・経験者問わず部員募集中✨ 男子17人女子23人で活動してます😎 DMお待ちしてます </p> </li>
       </ui>
 
 
@@ -49,12 +63,17 @@
 
         <h5>学生団体</h5>
 
-        <a onclick="PostMessage('https://lit.link/developers')" class="list-group-item list-group-item-action tableList"> アプリ開発プロジェクト <p class="explanation"> トクメモ＋を作ってます〜 </p>  </a>
+        <li onclick="PostMessage('https://lit.link/appdev')" class="list-group-item list-group-item-action tableList"> アプリ開発プロジェクト <p class="explanation"> トクメモ＋を作りました(2023年2月活動終了) </p>  </li>
 
-        <a onclick="PostMessage('https://mobile.twitter.com/tokudai_toripro')" class="list-group-item list-group-item-action tableList"> 鳥人間プロジェクト </a>
+        <li onclick="PostMessage('https://mobile.twitter.com/tokudai_toripro')" class="list-group-item list-group-item-action tableList"> 鳥人間プロジェクト </li>
 
         <li onclick="PostMessage('https://twitter.com/tugameproject')" class="list-group-item list-group-item-action tableList"> ゲームクリエイトプロジェクト <p class="explanation"> イノベーションプラザで活動している、ゲームを制作する団体です！ </p> </li>
 
+        <li onclick="PostMessage('https://twitter.com/awadentokushima')" class="list-group-item list-group-item-action tableList"> 阿波電鉄プロジェクト </li>
+
+        <li onclick="PostMessage('https://tokushimarocket.wordpress.com/')" class="list-group-item list-group-item-action tableList"> 徳島大学ロケットプロジェクト(TRP) <p class="explanation"> 全て自分達の手で作り上げたロケットで成層圏・宇宙圏の到達を目指す学生ハイブリッドロケット団体 </p> </li>
+
+        <li onclick="PostMessage('https://twitter.com/tokudairobocon')" class="list-group-item list-group-item-action tableList"> ロボコンプロジェクト <p class="explanation"> レスキュー活動に役立つロボットの制作をしてます！ </p> </li>
       </ui>
 
 
@@ -65,7 +84,7 @@
 
         <h5>サークル・同好会・団体</h5>
 
-        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList">草野球サークル KingStorks(キングストークス) <p class="explanation"> サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
+        <li onclick="PostMessage('https://www.instagram.com/kingstorks_official')" class="list-group-item list-group-item-action tableList"> 草野球サークル KingStorks(キングストークス) <p class="explanation"> サークルなので気軽に参加して頂けると嬉しいです！ </p> </li>
 
         <li onclick="PostMessage('https://instagram.com/soccer_tokushima.uni')" class="list-group-item list-group-item-action tableList"> Assistー徳大サッカーサークル <p class="explanation"> 初心者経験者男女混ざって緩く楽しくサッカーしてます⚽️いつでも募集中です連絡お待ちしております！ </p> </li>
 
@@ -102,8 +121,11 @@
 
     } else {
       // Android用
-      document.location.href = url;
-      // document.getElementById("test").innerHTML = url
+      // document.location.href = url;
+      // document.getElementById("clubList").innerHTML = url
+      // window.location.href = "callkotlinfunction://"
+      // Android.showToast(url)
+      alert(url)
     }
   }
 
